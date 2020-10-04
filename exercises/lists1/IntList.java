@@ -9,24 +9,33 @@ public class IntList {
 
 	/** Return the size of the list using... recursion! */
 	public int size() {
-		return 0;
+		if (rest == null) {
+			return 1;
+		}
+		return 1 + this.rest.size();
 	}
 
 	/** Return the size of the list using no recursion! */
 	public int iterativeSize() {
-		return 0;
+        int size = 0; IntList list = this;
+        while (!(list == null)) {
+            size = size + 1;
+            list = list.rest;
+        } 
+        return size;    
 	}
 
 	/** Returns the ith value in this list.*/
 	public int get(int i) {
-		return 0;
+		if (i == 0) {
+            return this.first;
+        } else {
+            return this.rest.get(i - 1);
+        }
 	}
 
 	public static void main(String[] args) {
-		IntList L = new IntList(15, null);
-		L = new IntList(10, L);
-		L = new IntList(5, L);
-
-		System.out.println(L.iterativeSize());
+		IntList N = new IntList(5, null);
+        System.out.println(N.size());       
 	}
 } 
