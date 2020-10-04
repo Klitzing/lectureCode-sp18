@@ -9,7 +9,9 @@ public class IntList {
 
 	/** Return the size of the list using... recursion! */
 	public int size() {
-		return 0;
+		if (rest = null) {
+			return 1;
+		} return 1 + this.rest.size();
 	}
 
 	/** Return the size of the list using no recursion! */
